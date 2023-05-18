@@ -1,0 +1,14 @@
+{% extends "books/base_books.html" %}
+
+{% block content %}
+<h1>{{ object.title }} </h1>
+<br>
+<ul>
+    <li>Authors : {% for author in object.authors.all %}
+        {{author.name}}
+        {% if not forloop.last %},{% else %}{% endif %}
+    </li>
+    <li>Publisher : {{ object.publisher.name }}</li>
+    <li>publication_date : {{} object.publication_date }}</li>
+</ul>
+{% endblock content %}

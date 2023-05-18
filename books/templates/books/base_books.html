@@ -1,0 +1,9 @@
+{% extends "books/base.html" %}
+<title>{% block title %}Books Application Site{% endblock %}</title>
+
+{% block sidebar %}
+{{ block.super }}
+<ul>
+    <li><a href="/books/">BooksHome</a></li>
+</ul>
+{% endblock %}
