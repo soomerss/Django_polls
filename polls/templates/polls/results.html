@@ -1,3 +1,7 @@
+{% extends "polls/base_polls.html" %}
+
+
+{% block content %}
 <fieldset>
     <legend>
         <h1>{{ object.question_text }}</h1>
@@ -10,5 +14,7 @@
         {% endfor %}
     </ul>
 </fieldset>
+
+{% endblock %}
 
 <a href="{% url 'polls:detail' object.id %}">Vote again?</a>

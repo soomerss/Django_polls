@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <link rel="stylesheet" href="{% static 'admin/css/base.css' %}" />
+    <title>{% block title %} soomers amaging Site {% endblock %}</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin/">Admin</a></li>
+        </ul>
+        {% endblock sidebar %}
+        <br>
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>
