@@ -9,6 +9,7 @@
         {% if not forloop.last %},{% else %}{% endif %}
     </li>
     <li>Publisher : {{ object.publisher.name }}</li>
-    <li>publication_date : {{} object.publication_date }}</li>
+    <li>publication_date : {{ object.publication_date }}</li>
 </ul>
-{% endblock content %}
+{% endfor %}
+{% endblock %}

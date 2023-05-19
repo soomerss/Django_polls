@@ -1,9 +1,13 @@
+import logging
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views.generic import DetailView, ListView
 
 from .models import Choice, Question
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -19,6 +23,7 @@ class PollsDetailView(DetailView):
 
 
 def vote(request, pk):
+    logger.debug(f"vote().question_id: {pk}")
     question = get_object_or_404(Question, pk=pk)
     try:
         selected_choice = question.choice_set.get(pk=request.POST["choice"])
