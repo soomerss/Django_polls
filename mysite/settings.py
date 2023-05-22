@@ -25,10 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 with open("mysite/secret_key.json") as f:
-    secrets = json.loads(f)
+    secrets = json.load(f)
 
 
 def get_secret_key(setting, secrets=secrets):
+    """
+    setting >> "SECRET_KEY"
+    """
     try:
         return secrets[setting]
     except KeyError:
